@@ -15,7 +15,7 @@
  * CHARSET      数据库编码格式
  */
 
-define("DB_HOST","localhost");
+define("DB_HOST","127.0.0.1");
 define("DB_USER","root");
 define("DB_PWD","");
 define("DB_NAME","rent");

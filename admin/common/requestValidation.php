@@ -9,7 +9,6 @@
 
 header('Content-Type:application/json;charset=utf-8');
 
-require_once(dirname(dirname(__FILE__)).'/config/config.php');
 require_once(dirname(__FILE__).'/db/mysql.function.php');
 
 class RequestValidation
@@ -42,7 +41,7 @@ class RequestValidation
     {
         $mysql = MysqlFunction::getInstance();
         $mysql->connectToDB();
-        $result = $mysql->getUserWithUnameAndPWD('rent_admin',$username,$pwd);
+        $result = $mysql->getUserWithUnameAndPWD('rent_users',$username,$pwd);
         $mysql->closeDB();
         return $result;
     }

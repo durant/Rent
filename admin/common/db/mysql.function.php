@@ -6,7 +6,9 @@
  * Time: 上午2:14
  */
 
-require(dirname(dirname(dirname(__FILE__))) . '/config/config.php');
+require_once(dirname(dirname(dirname(__FILE__))).'/base.php');
+
+require(BASE_PATH . '/config/config.php');
 
 class MysqlFunction
 {

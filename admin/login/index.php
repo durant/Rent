@@ -6,13 +6,15 @@
  * Time: 下午4:56
  */
 
-require_once(dirname(__FILE__).'/common/requestValidation.php');
+require_once(dirname(dirname(__FILE__)) . '/common/requestValidation.php');
 
 header('Content-Type:application/json;charset=utf-8');
 
 $err = null;
 $msg = null;
 $code = 0;
+
+// 校验API接口
 
 
 if(isset($_POST["method"]))
@@ -56,7 +58,7 @@ if(isset($_POST['v']))
 
 if(isset($_POST['username']) && isset($_POST['password']))
 {
-//    global $user;
+    global $user;
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -73,7 +75,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
     {
         $code = 100;
         $msg = '登录成功';
-        $user_array = array('uid'=>$user['uid'],'username'=>$username,'email'=>$user['email']);
+        $user_array = array('userid'=>$user['userid'],'username'=>$username,'gender'=>$user['gender'],'age'=>$user['age'],'iconid'=>$user['iconid'],'email'=>$user['email']);
         $result = generateJson($code,$user_array,$msg);
         exit($result);
     }
